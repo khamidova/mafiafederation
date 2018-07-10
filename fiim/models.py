@@ -5,6 +5,7 @@ from ckeditor.fields import RichTextField
 DOCUMENT_TYPES = [
     ('fiim', 'Официальные документы ФИИМ'),
     ('protocol', 'Протоколы собраний'),
+    ('order', 'Приказы'),
     ('sk', 'Судейский комитет'),
     ('dk', 'Дисциплинарный комитет'),
 ]

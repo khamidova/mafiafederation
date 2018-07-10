@@ -9,14 +9,11 @@
 						<div class="inner-content">
 							<div class="toggle-content" id="tab1">
 								<h2 class="page-title">Нормативные документы</h2>
-								<p>Proin accumsan, velit at pretium eleifend, lectus neque volutpat tortor, at placerat arcu odio vitae nisl. Curabitur dui ipsum, varius lobortis eros eget, faucibus faucibus nisl. <a href="#">Donec tincidunt</a> est a scelerisque suscipit. Vivamus sit amet purus at ante mollis mattis a at ante. Praesent purus metus, aliquet non porta sit amet, ultrices sit amet purus. Phasellus vitae orci diam. Cras sit amet gravida neque, auctor lobortis nibh.</p>
+								{% for doc in documents.fiim %}
 								<ul>
-									<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-									<li>Aliquid, beatae, ea delectus asperiores nostrum tempora nihil facere.</li>
-									<li>Consequatur nesciunt dolorem deserunt necessitatibus.</li>
-									<li>Iste laboriosam qui pariatur cum sint modi.</li>
+									<li>{{doc.title}} от {{doc.created_at}}</li>
 								</ul>
-								<p>Concept is <a href="#">free responsive template</a> based on <a rel="nofollow" href="http://getbootstrap.com">Bootstrap</a> framework. Gallery page is integrated with <a rel="nofollow" href="https://github.com/duncanmcdougall/Responsive-Lightbox">responsive lightbox</a>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for all images featured in this template. This template can be viewed in mobile phones or tablets. Feel free to use this layout for your websites.</p>
+								{% endfor %}
 							</div> <!-- /.toggle-content -->
 							<div class="toggle-content" id="tab2">
 								<h2 class="page-title">Приказы</h2>

@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic.base import TemplateView
+from fiim import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='fiim/about.html'), name='about'),
     path('officials', TemplateView.as_view(template_name='fiim/officials.html'), name='officials'),
-    path('documents', TemplateView.as_view(template_name='fiim/documents.html'), name='documents'),
+    path('documents', views.documents_list, name='documents'),
     path('partners', TemplateView.as_view(template_name='fiim/partners.html'), name='partners'),
     path('contact', TemplateView.as_view(template_name='fiim/contact.html'), name='contact'),
 ]
