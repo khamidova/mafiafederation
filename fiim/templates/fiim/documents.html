@@ -17,21 +17,35 @@
 							</div> <!-- /.toggle-content -->
 							<div class="toggle-content" id="tab2">
 								<h2 class="page-title">Приказы</h2>
-								<p>Quisque vestibulum sed mauris vel aliquet. Etiam in purus a massa mattis bibendum. Donec dolor odio, porttitor molestie euismod dictum, ultrices vel ipsum. Phasellus id sollicitudin erat. Nullam imperdiet sed metus iaculis dapibus. <a href="#">Duis pharetra</a> feugiat metus in sollicitudin.</p>
-                                <p>Proin cursus dapibus ipsum, vel congue tellus malesuada aliquam. Nullam id arcu urna. Donec at velit vel velit ultricies accumsan. Integer commodo dui libero, vitae rhoncus ante porttitor ac. Pellentesque sit amet lectus eros. <a href="#">Aliquam placerat</a> varius quam sed aliquam. Curabitur turpis diam, iaculis sit amet auctor ut, cursus quis velit. Mauris non risus vitae purus sodales rhoncus.</p>
-                                <p>Sed feugiat a turpis vitae porttitor. Proin placerat vitae enim ac scelerisque. Cras ac lectus hendrerit, pellentesque metus ut, molestie diam. Nam vitae bibendum velit, eu fermentum dui. In sodales dolor interdum egestas consequat. Integer id dolor nulla. Donec nec ante mauris.</p>
+								{% for doc in documents.order %}
+								<ul>
+									<li>{{doc.title}} от {{doc.created_at}}</li>
+								</ul>
+								{% endfor %}
 							</div> <!-- /.toggle-content -->
 							<div class="toggle-content" id="tab3">
 								<h2 class="page-title">Протоколы собраний</h2>
-								<p>Duis interdum eros elit, ut semper massa imperdiet vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut pretium vehicula est tristique volutpat. Duis ac felis quis augue dapibus hendrerit. Vivamus pretium, felis sed dignissim commodo, quam turpis commodo ipsum, at varius nisi risus ut dolor. Mauris quam purus, molestie ac urna eu, sagittis sagittis dui.</p>
-                                <p><a href="#">Integer risus mauris</a>, fermentum ac risus eu, vehicula tempus augue. Morbi egestas nulla turpis, non sollicitudin justo interdum ac. Pellentesque elementum, urna bibendum semper ullamcorper, lorem justo gravida arcu, ut pellentesque nulla orci in neque. Curabitur in commodo sem, rhoncus lobortis mi. Maecenas sit amet arcu sapien.</p>
-                                <p>Phasellus molestie molestie metus quis elementum. Cras dictum rutrum arcu id interdum. Vivamus suscipit suscipit mauris eget feugiat. Sed sagittis enim id tempus vulputate. Aliquam erat volutpat. In quis neque sodales, pulvinar turpis sed, lacinia sem.</p>
+								{% for doc in documents.protocol %}
+								<ul>
+									<li>{{doc.title}} от {{doc.created_at}}</li>
+								</ul>
+								{% endfor %}
 							</div> <!-- /.toggle-content -->
                             <div class="toggle-content" id="tab4">
 								<h2 class="page-title">Судейский комитет</h2>
+								{% for doc in documents.sk %}
+								<ul>
+									<li>{{doc.title}} от {{doc.created_at}}</li>
+								</ul>
+								{% endfor %}
                             </div>
                             <div class="toggle-content" id="tab5">
 								<h2 class="page-title">Дисциплинарный комитет</h2>
+								{% for doc in documents.dk %}
+								<ul>
+									<li>{{doc.title}} от {{doc.created_at}}</li>
+								</ul>
+								{% endfor %}
                             </div>
 
 						</div> <!-- /.inner-content -->
@@ -71,4 +85,9 @@
 			</div> <!-- /.container -->
 		</div> <!-- /.services -->
 </div>
+{% endblock %}
+{% block scripts %}
+<script>
+	set_active("templatemo_page3");
+</script>
 {% endblock %}

@@ -1,87 +1,11 @@
 "use strict";
 
+function set_active(tab) {
+    $(".main_menu a."+tab+", .responsive_menu a."+tab).addClass('active');
+    return false;
+}
+
 jQuery(document).ready(function($){
-
-    	 $("#menu-container .homepage").hide();
-	  //$(".our-services").show();
-	  $("#menu-container .about").show()
-
-	/************** Menu Content Opening *********************/
-	$(".main_menu a, .responsive_menu a").click(function(){
-		var id =  $(this).attr('class');
-		id = id.split('-');
-		$("#menu-container .content").hide();
-		$("#menu-container #menu-"+id[1]).addClass("animated fadeInDown").show();
-		$("#menu-container .homepage").hide();
-		$(".support").hide();
-		$(".testimonials").hide();
-		return false;
-	});
-
-	$( window ).load(function() {
-	  $("#menu-container .homepage").hide();
-	  //$(".our-services").show();
-	  $("#menu-container .about").show()
-	});
-
-	$(".main_menu a.templatemo_home").addClass('active');
-
-	$(".main_menu a.templatemo_home, .responsive_menu a.templatemo_home").click(function(){
-		$("#menu-container .about").addClass("animated fadeInDown").show();
-		$(".our-services").show();
-		$(this).addClass('active');
-		$(".main_menu a.templatemo_page2, .responsive_menu a.templatemo_page2").removeClass('active');
-		$(".main_menu a.templatemo_page3, .responsive_menu a.templatemo_page3").removeClass('active');
-		$(".main_menu a.templatemo_page4, .responsive_menu a.templatemo_page4").removeClass('active');
-		$(".main_menu a.templatemo_page5, .responsive_menu a.templatemo_page5").removeClass('active');
-		return false;
-	});
-
-	$(".main_menu a.templatemo_page2, .responsive_menu a.templatemo_page2").click(function(){
-		$("#menu-container .homepage").addClass("animated fadeInDown").show();
-		$(this).addClass('active');
-		$(".main_menu a.templatemo_home, .responsive_menu a.templatemo_home").removeClass('active');
-		$(".main_menu a.templatemo_page3, .responsive_menu a.templatemo_page3").removeClass('active');
-		$(".main_menu a.templatemo_page4, .responsive_menu a.templatemo_page4").removeClass('active');
-		$(".main_menu a.templatemo_page5, .responsive_menu a.templatemo_page5").removeClass('active');
-		return false;
-	});
-
-	$(".main_menu a.templatemo_page3, .responsive_menu a.templatemo_page3").click(function(){
-		$("#menu-container .products").addClass("animated fadeInDown").show();
-		$(".our-services").show();
-		$(this).addClass('active');
-		$(".main_menu a.templatemo_page2, .responsive_menu a.templatemo_page2").removeClass('active');
-		$(".main_menu a.templatemo_home, .responsive_menu a.templatemo_home").removeClass('active');
-		$(".main_menu a.templatemo_page4, .responsive_menu a.templatemo_page4").removeClass('active');
-		$(".main_menu a.templatemo_page5, .responsive_menu a.templatemo_page5").removeClass('active');
-		return false;
-	});
-
-	$(".main_menu a.templatemo_page4, .responsive_menu a.templatemo_page4").click(function(){
-		$("#menu-container .services").addClass("animated fadeInDown").show();
-		$(".our-services").show();
-		$(this).addClass('active');
-		$(".main_menu a.templatemo_page2, .responsive_menu a.templatemo_page2").removeClass('active');
-		$(".main_menu a.templatemo_page3, .responsive_menu a.templatemo_page3").removeClass('active');
-		$(".main_menu a.templatemo_home, .responsive_menu a.templatemo_home").removeClass('active');
-		$(".main_menu a.templatemo_page5, .responsive_menu a.templatemo_page5").removeClass('active');
-		return false;
-	});
-
-	$(".main_menu a.templatemo_page5, .responsive_menu a.templatemo_page5").click(function(){
-		$("#menu-container .contact").addClass("animated fadeInDown").show();
-		$(this).addClass('active');
-		$(".main_menu a.templatemo_page2, .responsive_menu a.templatemo_page2").removeClass('active');
-		$(".main_menu a.templatemo_page3, .responsive_menu a.templatemo_page3").removeClass('active');
-		$(".main_menu a.templatemo_page4, .responsive_menu a.templatemo_page4").removeClass('active');
-		$(".main_menu a.templatemo_home, .responsive_menu a.templatemo_home").removeClass('active');
-		
-		loadScript();
-		return false;
-	});
-
-
 	/************** Gallery Hover Effect *********************/
 	$(".overlay").hide();
 

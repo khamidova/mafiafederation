@@ -44,9 +44,9 @@ http://www.templatemo.com/tm-397-concept
 			<div class="responsive_menu">
 				<ul>
 					<li><a class="show-1 templatemo_home" href="{% url 'about' %}">О ФИИМ</a></li>
-					<li><a class="show-2 templatemo_page3" href="{% url 'officials' %}">Руководство</a></li>
-					<li><a class="show-3 templatemo_page4" href="{% url 'documents' %}">Документы</a></li>
-					<li><a class="show-4 templatemo_page2" href="{% url 'partners' %}">Партнеры</a></li>
+					<li><a class="show-2 templatemo_page2" href="{% url 'officials' %}">Руководство</a></li>
+					<li><a class="show-3 templatemo_page3" href="{% url 'documents' %}">Документы</a></li>
+					<li><a class="show-4 templatemo_page4" href="{% url 'partners' %}">Партнеры</a></li>
 					<li><a class="show-5 templatemo_page5" href="{% url 'contact' %}">Контакт</a></li>
 				</ul>
 			</div>
@@ -60,9 +60,9 @@ http://www.templatemo.com/tm-397-concept
 					<div class="col-md-12 main_menu">
 						<ul>
 							<li><a class="show-1 templatemo_home" href="{% url 'about' %}">О ФИИМ</a></li>
-							<li><a class="show-2 templatemo_page3" href="{% url 'officials' %}">Руководство</a></li>
-							<li><a class="show-3 templatemo_page4" href="{% url 'documents' %}">Документы</a></li>
-							<li><a class="show-4 templatemo_page2" href="{% url 'partners' %}">Партнеры</a></li>
+							<li><a class="show-2 templatemo_page2" href="{% url 'officials' %}">Руководство</a></li>
+							<li><a class="show-3 templatemo_page3" href="{% url 'documents' %}">Документы</a></li>
+							<li><a class="show-4 templatemo_page4" href="{% url 'partners' %}">Партнеры</a></li>
 							<li><a class="show-5 templatemo_page5" href="{% url 'contact' %}">Контакт</a></li>
 						</ul>
 					</div> <!-- /.col-md-12 -->
@@ -98,5 +98,8 @@ http://www.templatemo.com/tm-397-concept
 	<script src="{% static "fiim/js/bootstrap.js" %}"></script>
 	<script src="{% static "fiim/js/tabs.js" %}"></script>
 	<script src="{% static "fiim/js/jquery.lightbox.js" %}"></script>
+	<script src="{% static "fiim/js/templatemo_custom.js" %}"></script>
+	{% block scripts %}
+	{% endblock %}
 </body>
 </html>
