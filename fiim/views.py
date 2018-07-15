@@ -10,5 +10,5 @@ def documents_list(request):
     return render(request, 'fiim/documents.html', {'documents': documents})
 
 def partners_list(request):
-    partners = Partner.objects.all().order_by(Length('name').asc())
+    partners = Partner.objects.all()
     return render(request, 'fiim/partners.html', {'partners': partners})

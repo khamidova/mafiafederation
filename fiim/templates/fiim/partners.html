@@ -1,27 +1,36 @@
 {% extends 'fiim/base.html' %}
 {% load mathfilters %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% endblock %}
+
 {% block content %}
 <div id="menu-container">
         <div class="content homepage animated fadeInDown" id="menu-4">
 			<div class="container-fluid">
-				<div class="row">
+
 					{% for partner in partners %}
 						{% if forloop.counter0|mod:4 == 0 %}
-						<div class="col-md-2 col-sm-4 col-xs-6 col-md-offset-2">
-						{% else %}
-						<div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="d-md-flex justify-content-center align-items-stretch">
 						{% endif %}
-							<div class="gallery-item">
-								<a href={{partner.link}} target="_blank">
-									<img src="{{partner.image.url}}" alt="{{partner.name}}">
-								</a>
-								<div class="content-gallery">
-									<h3><a href={{partner.link}} target="_blank">{{partner.name}}</a></h3>
-								</div>
-							</div> <!-- /.gallery-item -->
+                            <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px">
+                                <div class="gallery-item h-100 ">
+
+                                    <a href={{partner.link}} target="_blank">
+                                        <img src="{{partner.image.url}}" alt="{{partner.name}}">
+                                    </a>
+                                    <div class="content-gallery">
+                                        <h3><a href={{partner.link}} target="_blank">{{partner.name}}</a></h3>
+                                    </div>
+
+							    </div> <!-- /.gallery-item -->
 						</div> <!-- /.col-md-2 -->
+                            {% if forloop.counter0|mod:4 == 3 %}
+                        </div> <!-- /.row -->
+						{% endif %}
 					{% endfor %}
-				</div> <!-- /.row -->
+
 			</div> <!-- /.slide-item -->
 		</div> <!-- /.homepage -->
 </div>
