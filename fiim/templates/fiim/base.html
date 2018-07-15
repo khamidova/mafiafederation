@@ -29,6 +29,9 @@ http://www.templatemo.com/tm-397-concept
     <link rel="stylesheet" href="{% static "fiim/css/font-awesome.min.css" %}">
 	<link rel="stylesheet" href="{% static "fiim/css/templatemo_misc.css" %}">
 
+    {% block head %}
+	{% endblock %}
+
 	<!-- Main CSS -->
     <link rel="stylesheet" href="{% static "fiim/css/main.css" %}">
 	<link rel="stylesheet" href="{% static "fiim/css/templatemo_style.css" %}">
@@ -36,8 +39,7 @@ http://www.templatemo.com/tm-397-concept
 	<!-- Favicons -->
     <link rel="shortcut icon" href="{% static "fiim/images/ico/favicon.ico" %}">
 
-	{% block head %}
-	{% endblock %}
+
 
 </head>
 <body>
