@@ -45,6 +45,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
+  min-height: 100%;
 }
 
 ol, ul {
@@ -273,7 +274,8 @@ a.menu-toggle-btn {
 	Services Styles 
 --------------------------------------------------------*/
 .services p {
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .services ul {
   margin-top: 30px;
@@ -411,7 +413,6 @@ a.menu-toggle-btn {
   margin-top: 30px;
   /*border-top: 3px solid #b10021; */
   padding: 20px 0;
-  position: relative;
   background-color: #000;
   color: #FFF;
 }
