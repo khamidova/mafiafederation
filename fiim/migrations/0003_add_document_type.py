@@ -10,9 +10,9 @@ def fill_document_type(apps, schema_editor):
     DocumentType = apps.get_model("fiim", "DocumentType")
     db_alias = schema_editor.connection.alias
     DocumentType.objects.using(db_alias).bulk_create([
-        DocumentType(name="Документы", code="fiim"),
-        DocumentType(name="Протоколы собраний", code="protocol"),
-        DocumentType(name="Судейский и дисциплинарный комитет", code="skdk"),
+        DocumentType(name="Документы", code="fiim", published=True, icon='fa fa-file'),
+        DocumentType(name="Протоколы собраний", code="protocol", published=True, icon='fas fa-clipboard-list'),
+        DocumentType(name="Судейский и дисциплинарный комитет", code="skdk", published=True, icon='fas fa-balance-scale'),
     ])
 
 
