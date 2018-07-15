@@ -2,15 +2,6 @@ from django.db import models
 from ckeditor.fields import RichTextField
 
 
-DOCUMENT_TYPES = [
-    ('fiim', 'Нормативные документы'),
-    ('protocol', 'Протоколы собраний'),
-    ('order', 'Приказы'),
-    ('sk', 'Судейский комитет'),
-    ('dk', 'Дисциплинарный комитет'),
-]
-
-
 class Region(models.Model):
     name = models.CharField(max_length=100)
 
@@ -34,16 +25,29 @@ class Official(models.Model):
 
 
 class Document(models.Model):
-    type = models.CharField(choices=DOCUMENT_TYPES, max_length=100)
+    type = models.ForeignKey('DocumentType', on_delete=models.PROTECT, related_name='documents')
     pdf = models.FileField()
     created_at = models.DateField()
     title = models.CharField(max_length=300)
     content = RichTextField()
+    published = models.BooleanField(default=True)
 
     participant = models.ManyToManyField('fiim.Official', related_name='documents')
 
     def __str__(self):
         return self.title
+
+class DocumentType(models.Model):
+    name = models.CharField(max_length=100)
+    code = models.CharField(max_length=20, primary_key=True)
+    published = models.BooleanField()
+    icon = models.CharField(max_length=50, default='fa fa-file')
+
+    def __str__(self):
+        return self.name
+
+    def published_documents(self):
+        return self.documents.filter(published=True).order_by('created_at')
 
 class Partner(models.Model):
     name = models.CharField(max_length=100)
