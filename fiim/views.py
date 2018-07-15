@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from fiim.models import Document, DOCUMENT_TYPES
-import logging
-# Create your views here.
+from fiim.models import Document, DOCUMENT_TYPES, Partner
+from django.db.models.functions import Length
+
 
 def documents_list(request):
     documents = {}
@@ -9,3 +9,6 @@ def documents_list(request):
         documents[document_type] = Document.objects.filter(type=document_type).order_by('created_at')
     return render(request, 'fiim/documents.html', {'documents': documents})
 
+def partners_list(request):
+    partners = Partner.objects.all().order_by(Length('name').asc())
+    return render(request, 'fiim/partners.html', {'partners': partners})

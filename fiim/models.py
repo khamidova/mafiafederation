@@ -3,7 +3,7 @@ from ckeditor.fields import RichTextField
 
 
 DOCUMENT_TYPES = [
-    ('fiim', 'Официальные документы ФИИМ'),
+    ('fiim', 'Нормативные документы'),
     ('protocol', 'Протоколы собраний'),
     ('order', 'Приказы'),
     ('sk', 'Судейский комитет'),
@@ -24,9 +24,9 @@ class Official(models.Model):
     region = models.ForeignKey('fiim.Region', on_delete=models.PROTECT)
     city = models.CharField(max_length=100)
     description = RichTextField()
-    photo = models.ImageField(upload_to = 'images/', default = 'images/official-no-img.jpg')
+    photo = models.ImageField(upload_to='images/officials', default = 'images/officials/official-no-img.jpg')
     started_at = models.DateField()
-    document = models.FileField()
+    document = models.FileField(upload_to='documents')
     published = models.BooleanField(default=False)
 
     def __str__(self):
@@ -45,4 +45,10 @@ class Document(models.Model):
     def __str__(self):
         return self.title
 
+class Partner(models.Model):
+    name = models.CharField(max_length=100)
+    link = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='images/partners')
 
+    def __str__(self):
+        return self.name

@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
 from django.views.generic.base import TemplateView
+from django.conf import settings
 from fiim import views
 
 urlpatterns = [
@@ -23,6 +25,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='fiim/about.html'), name='about'),
     path('officials', TemplateView.as_view(template_name='fiim/officials.html'), name='officials'),
     path('documents', views.documents_list, name='documents'),
-    path('partners', TemplateView.as_view(template_name='fiim/partners.html'), name='partners'),
+    path('partners', views.partners_list, name='partners'),
     path('contact', TemplateView.as_view(template_name='fiim/contact.html'), name='contact'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

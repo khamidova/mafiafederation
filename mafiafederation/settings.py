@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'fiim',
     'ckeditor',
+    'mathfilters'
 ]
 
 MIDDLEWARE = [
@@ -121,10 +122,12 @@ USE_TZ = True
 
 SETTINGS_ROOT = os.path.dirname(__file__)
 
-STATIC_ROOT = os.path.join(SETTINGS_ROOT, "static")
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
 
     os.path.join(SETTINGS_ROOT, '../fiim/templates'),
 )
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
