@@ -11,7 +11,7 @@
 			<div class="container-fluid">
 
 					{% for partner in partners %}
-						{% if forloop.counter0|mod:4 == 0 %}
+						{% if forloop.counter0|mod:5 == 0 %}
                         <div class="d-md-flex justify-content-center align-items-stretch">
 						{% endif %}
                             <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom:20px">
@@ -26,7 +26,7 @@
 
 							    </div> <!-- /.gallery-item -->
 						</div> <!-- /.col-md-2 -->
-                            {% if forloop.counter0|mod:4 == 3 %}
+                            {% if forloop.counter0|mod:5 == 4 %}
                         </div> <!-- /.row -->
 						{% endif %}
 					{% endfor %}
