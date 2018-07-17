@@ -13,3 +13,9 @@ if __name__ == "__main__":
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+
+# TODO fix footer
+# TODO delete margin top for document content
+# TODO officials page
+# TODO contact page
+# TODO partners page responsive

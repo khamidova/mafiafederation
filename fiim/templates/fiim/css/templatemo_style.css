@@ -267,11 +267,11 @@ a.menu-toggle-btn {
   width: 100%;
   max-height: 60vw;
 }
-.product-item a.product-title {
+.product-item h3.product-title {
   margin: 15px 0;
-  display: inline-block;
   font-weight: 400;
   font-size: 18px;
+  color: #b10021;
 }
 
 /*------------------------------------------------------

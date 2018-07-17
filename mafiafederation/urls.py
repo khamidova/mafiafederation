@@ -23,7 +23,7 @@ from fiim import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='fiim/about.html'), name='about'),
-    path('officials', TemplateView.as_view(template_name='fiim/officials.html'), name='officials'),
+    path('officials', views.officials_list, name='officials'),
     path('documents', views.documents_list, name='documents'),
     path('partners', views.partners_list, name='partners'),
     path('contact', TemplateView.as_view(template_name='fiim/contact.html'), name='contact'),
