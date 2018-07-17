@@ -163,6 +163,10 @@ input, textarea {
   font-weight: 700;
 }
 
+.site-header .templatemo_logo img {
+  max-width: 100%;
+}
+
 a.menu-toggle-btn {
   padding: 15px 0;
   display: block;
