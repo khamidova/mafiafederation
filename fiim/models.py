@@ -11,22 +11,24 @@ class Region(models.Model):
 
 class Official(models.Model):
     name = models.CharField(max_length=100)
-    position = models.CharField(max_length=300, default='вице-президент')
+    position = models.CharField(max_length=300, default='Вице-президент')
     region = models.ForeignKey('fiim.Region', on_delete=models.PROTECT)
     city = models.CharField(max_length=100)
     description = RichTextField()
     photo = models.ImageField(upload_to='images/officials', default = 'images/officials/official-no-img.jpg')
     started_at = models.DateField()
-    document = models.FileField(upload_to='documents')
+    document = models.ForeignKey(to="fiim.Document", on_delete=models.PROTECT)
     published = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.name} ({self.position})'
 
+def document_type_path(instance, filename):
+    return "documents/{}".format(instance.type.code)
 
 class Document(models.Model):
     type = models.ForeignKey('DocumentType', on_delete=models.PROTECT, related_name='documents')
-    pdf = models.FileField()
+    pdf = models.FileField(upload_to=document_type_path)
     created_at = models.DateField()
     title = models.CharField(max_length=300)
     content = RichTextField()
