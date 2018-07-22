@@ -1,85 +1,109 @@
 {% extends 'fiim/base.html' %}
+{% load message_tags %}
 
 {% block content %}
 <div id="menu-container">
-	<div class="content contact animated fadeInDown" id="menu-5">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="widget-content">
-						<div class="page-title">Контакты</div>
-						<div class="contact-information">
-							<div class="row">
-								<div class="col-md-6 col-sm-6">
-									<p>Украина, Киев, ул. Красноармейская 72</p>
-								</div> <!-- /.col-md-6 -->
-								<div class="col-md-6 col-sm-6 text-right">
-									<ul>
-										<li>Телефон: +38 (067) 656-89-48</li>
-										<li>Email: office@mafiafederation.com</li>
-									</ul>
-								</div> <!-- /.col-md-6 -->
-							</div> <!-- /.row -->
-							<div class="row text-center contact-icons">
-								<a href="https://www.facebook.com/fiimaf/" target="_blank">
+    <div class="content contact animated fadeInDown" id="menu-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="widget-content">
+                        <div class="page-title">Контакты</div>
+                        <div class="contact-information">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <p>Украина, Киев, ул. Красноармейская 72</p>
+                                </div> <!-- /.col-md-6 -->
+                                <div class="col-md-6 col-sm-6 text-right">
+                                    <ul>
+                                        <li>Телефон: +38 (067) 656-89-48</li>
+                                        <li>Email: office@mafiafederation.com</li>
+                                    </ul>
+                                </div> <!-- /.col-md-6 -->
+                            </div> <!-- /.row -->
+                            <div class="row text-center contact-icons">
+                                <a href="https://www.facebook.com/fiimaf/" target="_blank">
                                     <i class="fab fa-facebook-square"></i>
                                 </a>
-								<a href="https://vk.com/federation_mafia" target="_blank">
+                                <a href="https://vk.com/federation_mafia" target="_blank">
                                     <i class="fab fa-vk"></i>
                                 </a>
-								<a href="https://www.youtube.com/channel/UCrGjW5zLY0ADh5Yfev5vo2A" target="_blank">
+                                <a href="https://www.youtube.com/channel/UCrGjW5zLY0ADh5Yfev5vo2A" target="_blank">
                                     <i class="fab fa-youtube"></i>
                                 </a>
-							</div>
-							<h3 class="product-title">Судейский комитет</h3>
-							<p>E-mail: skfiim777@gmail.com</p>
-							<p>Глава: Андрей Фокин</p>
-							<div class="row text-center contact-icons">
-								<a href="https://vk.com/skfiim" target="_blank">
+                            </div>
+                            <h3 class="product-title">Судейский комитет</h3>
+                            <p>E-mail: skfiim777@gmail.com</p>
+                            <p>Глава: Андрей Фокин</p>
+                            <div class="row text-center contact-icons">
+                                <a href="https://vk.com/skfiim" target="_blank">
                                     <i class="fab fa-vk"></i>
                                 </a>
-								<a href="https://www.youtube.com/channel/UCysd8ar2Hii2MHvV4HYXhVA" target="_blank">
+                                <a href="https://www.youtube.com/channel/UCysd8ar2Hii2MHvV4HYXhVA" target="_blank">
                                     <i class="fab fa-youtube"></i>
                                 </a>
-								<a href="https://drive.google.com/open?id=0B8td7ScooMxhd0Z0MGZiRkNOVkk" target="_blank">
+                                <a href="https://drive.google.com/open?id=0B8td7ScooMxhd0Z0MGZiRkNOVkk" target="_blank">
                                     <i class="fab fa-google-drive"></i>
                                 </a>
-							</div>
-							<h3 class="product-title">Дисциплинарный комитет</h3>
-							<p>E-mail: dkfiim777@gmail.com</p>
-							<p>Глава: Виталий Слуцкер</p>
-						</div> <!-- /.contact-information -->
-					</div> <!-- /.inner-content -->
-				</div> <!-- /.col-md-6 -->
-				<div class="col-md-6">
-					<div class="widget-content">
-						<div class="page-title">Contact Us</div>
-						<div class="contact-form">
-							<fieldset>
-								<input id="name" type="text" name="name" placeholder="Имя" maxlength="40">
-							</fieldset>
-							<fieldset>
-								<input type="email" name="email" id="email" placeholder="Email" maxlength="30">
-							</fieldset>
-							<fieldset>
-								<input type="text" name="subject" id="subject" placeholder="Тема" maxlength="60">
-							</fieldset>
-							<fieldset>
-								<textarea name="comments" id="comments" placeholder="Сообщение"></textarea>
-							</fieldset>
-							<fieldset>
-								<input type="submit" name="send" value="Отправить" id="submit" class="button">
-							</fieldset>
-						</div> <!-- /.contact-form -->
-					</div> <!-- /.inner-content -->
-				</div> <!-- /.col-md-6 -->
-			</div> <!-- /.row -->
-		</div> <!-- /.container -->
-	</div> <!-- /.contact -->
+                            </div>
+                            <h3 class="product-title">Дисциплинарный комитет</h3>
+                            <p>E-mail: dkfiim777@gmail.com</p>
+                            <p>Глава: Виталий Слуцкер</p>
+                        </div> <!-- /.contact-information -->
+                    </div> <!-- /.inner-content -->
+                </div> <!-- /.col-md-6 -->
+                <div class="col-md-6">
+                    <div class="widget-content">
+                        {% if messages %}
+                        <div id="messages">
+                            {% for message in messages %}
+                            <div class=row>
+                                <div class=col-md-12>
+                                    {% get_bootstrap_alert_msg_css_name message.tags as alert_tag %}
+                                    <div class="alert alert-{{alert_tag}} alert-dismissable">
+                                        <button type=button class=close data-dismiss=alert>&times;</button>
+                                        {{ message }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="page-title">Contact Us</div>
+                        <div class="contact-form">
+                            <form role="form" action="" method="post">
+                                {% csrf_token %}
+                                <fieldset>
+                                    <input id="id_name" type="text" name="name" placeholder="Имя" maxlength="40"
+                                           required>
+                                </fieldset>
+                                <fieldset>
+                                    <input type="email" name="email" id="id_email" placeholder="Email" maxlength="30"
+                                           required>
+                                </fieldset>
+                                <fieldset>
+                                    <input type="text" name="subject" id="id_subject" placeholder="Тема" maxlength="60"
+                                           required>
+                                </fieldset>
+                                <fieldset>
+                                    <textarea name="message" id="id_message" placeholder="Сообщение"
+                                              required></textarea>
+                                </fieldset>
+                                <fieldset>
+                                    <input type="submit" name="send" value="Отправить" id="submit" class="button">
+                                </fieldset>
+                            </form>
+                        </div> <!-- /.contact-form -->
+                    </div> <!-- /.inner-content -->
+                </div> <!-- /.col-md-6 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /.contact -->
 </div>
 {% endblock %}
 {% block scripts %}
 <script>
 	set_active("templatemo_page5");
+
 </script>
 {% endblock %}

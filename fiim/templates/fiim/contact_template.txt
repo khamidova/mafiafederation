@@ -1,0 +1,5 @@
+Имя: {{ name }}
+E-mail: {{ email }}
+Тема: {{ subject }}
+Сообщение:
+{{ message|safe|striptags }}
