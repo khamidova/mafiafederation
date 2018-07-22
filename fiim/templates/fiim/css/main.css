@@ -19,7 +19,7 @@
     box-shadow: none;
     border: none;
     min-height: 100%;
-    padding: 100px 0;
+    padding: 50px 0;
     text-align: center;
 }
 
@@ -44,8 +44,8 @@
     width: 32px;
     height: 32px;
     background-color: transparent;
-    top: 25px;
-    right: 25px;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
 }
 
