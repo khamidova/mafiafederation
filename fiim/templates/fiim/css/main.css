@@ -10,6 +10,17 @@
     margin-top: 30px;
 }
 
+.contact-icons {
+    font-size:30px;
+    margin-top:15px;
+}
+
+@media (min-width: 768px) {
+.widget-content {
+    min-height:530px;
+}
+}
+
 /* lightbox */
 
 .portfolio-modal .modal-content {
