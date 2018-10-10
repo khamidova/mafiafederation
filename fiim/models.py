@@ -18,7 +18,7 @@ class Official(models.Model):
     description = RichTextField()
     photo = models.ImageField(upload_to='images/officials', default = 'images/officials/official-no-img.jpg')
     started_at = models.DateField()
-    document = models.ForeignKey(to="fiim.Document", on_delete=models.PROTECT)
+    document = models.ForeignKey(to="fiim.Document", on_delete=models.PROTECT, null=True, blank=True)
     published = models.BooleanField(default=False)
 
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
@@ -42,7 +42,7 @@ class Document(models.Model):
     content = RichTextField()
     published = models.BooleanField(default=True)
 
-    participant = models.ManyToManyField('fiim.Official', related_name='documents')
+    participant = models.ManyToManyField('fiim.Official', related_name='documents', blank=True)
 
     def __str__(self):
         return self.title
