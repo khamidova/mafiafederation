@@ -31,8 +31,10 @@ class Official(models.Model):
     def __str__(self):
         return f'{self.name} ({self.position})'
 
+
 def document_type_path(instance, filename):
-    return "documents/{}".format(instance.type.code)
+    return f"documents/{instance.type.code}/{filename}"
+
 
 class Document(models.Model):
     type = models.ForeignKey('DocumentType', on_delete=models.PROTECT, related_name='documents')
