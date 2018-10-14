@@ -33,6 +33,16 @@
                                                 </a>
                                             </div>
                                             {{ doc.content|safe }}
+                                            {% if doc.participant.all %}
+                                            <div>
+                                                <p>На совете присутствовали:</p>
+                                                <ol>
+                                                {% for participant in doc.participant.all %}
+                                                    <li>{{ participant.name }}, {{participant.position}}, {{participant.region}}, г. {{ participant.city }}  </li>
+                                                {% endfor %}
+                                                </ol>
+                                            </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
