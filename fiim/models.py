@@ -54,12 +54,16 @@ class DocumentType(models.Model):
     code = models.CharField(max_length=20, primary_key=True)
     published = models.BooleanField()
     icon = models.CharField(max_length=50, default='fa fa-file')
+    sorting_desc = models.BooleanField()
 
     def __str__(self):
         return self.name
 
     def published_documents(self):
-        return self.documents.filter(published=True).order_by('created_at')
+        if self.sorting_desc:
+            return self.documents.filter(published=True).order_by('-created_at')
+        else:
+            return self.documents.filter(published=True).order_by('created_at')
 
 class Partner(models.Model):
     name = models.CharField(max_length=100)
