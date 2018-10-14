@@ -35,12 +35,10 @@
                                             {{ doc.content|safe }}
                                             {% if doc.participant.all %}
                                             <div>
-                                                <p>На совете присутствовали:</p>
-                                                <ol>
+                                                На совете присутствовали:
                                                 {% for participant in doc.participant.all %}
-                                                    <li>{{ participant.name }}, {{participant.position}}, {{participant.region}}, г. {{ participant.city }}  </li>
+                                                    <br>{{ forloop.counter }}. {{ participant.name }}, {{participant.position}}, {{participant.region}}, г. {{ participant.city }}
                                                 {% endfor %}
-                                                </ol>
                                             </div>
                                             {% endif %}
                                         </div>
