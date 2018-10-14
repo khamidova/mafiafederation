@@ -132,4 +132,9 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-DEFAULT_FROM_EMAIL = ''
+DEFAULT_FROM_EMAIL = 'maffederation@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'maffederation@gmail.com'
+EMAIL_HOST_PASSWORD = 'changemetopassword'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
