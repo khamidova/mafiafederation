@@ -15,13 +15,10 @@
                                 {% with doc_id=doc.id|stringformat:'s' %}
                                 <div class="panel panel-default ">
                                     <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse"
-                                         data-parent="#fiimAccordion" data-target="{{'#document'|add:doc_id}}">
+                                        data-parent="#fiimAccordion" data-target="{{'#document'|add:doc_id}}">
                                         <div class="panel-title">
-                                            <a href="#" class="ing">
-                                                <i class="plus-minus-button collapse-nav-button glyphicon"></i>
-                                                {{doc.title}} от {{doc.created_at|date:'d.m.Y'}}
-                                            </a>
-
+                                            <i class="plus-minus-button collapse-nav-button glyphicon"></i>
+                                            {{doc.title}} от {{doc.created_at|date:'d.m.Y'}}
                                         </div>
                                     </div>
                                     <div id="{{'document'|add:doc_id}}" class="panel-collapse collapse"
