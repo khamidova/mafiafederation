@@ -7,8 +7,13 @@ from fiim.models import (
     Partner
 )
 
+
+class DocumentAdmin(admin.ModelAdmin):
+    filter_horizontal = ('participant',)
+
+
 admin.site.register(Official)
 admin.site.register(Region)
-admin.site.register(Document)
+admin.site.register(Document, DocumentAdmin)
 admin.site.register(Partner)
 admin.site.register(DocumentType)
