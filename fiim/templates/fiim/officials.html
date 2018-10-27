@@ -54,9 +54,11 @@
                                     <i class="fab fa-vk"></i>
                                 </a>
                                 {% endif %}
+                                {% if official.document %}
                                 <a href="{{official.document.pdf.url}}" target="_blank">
                                     <i class="far fa-file-pdf"></i>
                                 </a>
+                                {% endif %}
                             </div>
                         </div>
                         <p class="text-left">E-mail: {{official.email}}</p>
