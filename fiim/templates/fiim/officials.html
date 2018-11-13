@@ -1,5 +1,10 @@
 {% extends 'fiim/base.html' %}
 
+{%block meta%}
+<meta name="description" content="Вице-президенты федерация интеллектуальной игры мафия – официальный сайт ФИИМ" />
+{%endblock%}
+
+
 {% block content %}
 <div id="menu-container">
     <div class="content products animated fadeInDown" id="menu-2">
@@ -12,9 +17,9 @@
                             <img src="{{official.photo.url}}" alt="{{official.name}}"
                             style="max-height:300px; max-width:100%; width:auto; height:auto">
                         </a>
-                        <h3 class="product-title text-center">{{official.name}}</h3>
-                        <p class="text-center">{{official.position}}</p>
-                        <p class="text-center">{{official.region}}</p>
+                        <h1 class="product-title text-center">{{official.name}}</h1>
+                        <h2 class="text-center">{{official.position}}</h2>
+                        <h2 class="text-center">{{official.region}}</h2>
                     </div> <!-- /.product-item -->
                 </div> <!-- /.col-md-4 -->
                 {% endfor %}

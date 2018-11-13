@@ -97,3 +97,16 @@
 .accordion-toggle {
     cursor: pointer;
 }
+
+h2.product-title {
+  margin: 15px 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: #b10021;
+}
+h1.product-title {
+  margin: 15px 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: #b10021;
+}
