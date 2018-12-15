@@ -41,13 +41,21 @@ class Document(models.Model):
     pdf = models.FileField(upload_to=document_type_path)
     created_at = models.DateField()
     title = models.CharField(max_length=300)
-    content = RichTextField()
+    content = RichTextField(blank=True, null=True)
     published = models.BooleanField(default=True)
 
     participant = models.ManyToManyField('fiim.Official', related_name='documents', blank=True)
 
     def __str__(self):
         return f'{self.title} от {self.created_at:%d.%m.%Y}'
+
+    @property
+    def content_adjusted(self):
+        print(self.content)
+        if self.content:
+            return self.content
+        else:
+            return '<p>Текст документа доступен в PDF формате.</p>'
 
 class DocumentType(models.Model):
     name = models.CharField(max_length=100)

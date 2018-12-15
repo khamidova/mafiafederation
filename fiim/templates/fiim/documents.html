@@ -36,7 +36,7 @@
                                                     <i class="fas fa-external-link-alt"></i>
                                                 </a>
                                             </div>
-                                            {{ doc.content|safe }}
+                                            {{ doc.content_adjusted|safe }}
                                             {% if doc.participant.all %}
                                             <div>
                                                 На совете присутствовали:
