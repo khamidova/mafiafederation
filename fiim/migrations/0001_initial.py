@@ -17,7 +17,12 @@ class Migration(migrations.Migration):
             name='Document',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(choices=[('fiim', 'Официальные документы ФИИМ'), ('protocol', 'Протоколы собраний'), ('sk', 'Судейский комитет'), ('dk', 'Дисциплинарный комитет')], max_length=100)),
+                ('type', models.CharField(choices=[
+                    ('fiim', 'Официальные документы ФИИМ'),
+                    ('protocol', 'Протоколы собраний'),
+                    ('sk', 'Судейский комитет'),
+                    ('dk', 'Дисциплинарный комитет')
+                ], max_length=100)),
                 ('pdf', models.FileField(upload_to='')),
                 ('created_at', models.DateField()),
                 ('title', models.CharField(max_length=300)),

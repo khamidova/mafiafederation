@@ -12,7 +12,8 @@ def fill_document_type(apps, schema_editor):
     DocumentType.objects.using(db_alias).bulk_create([
         DocumentType(name="Документы", code="fiim", published=True, icon='fa fa-file'),
         DocumentType(name="Протоколы собраний", code="protocol", published=True, icon='fas fa-clipboard-list'),
-        DocumentType(name="Судейский и дисциплинарный комитет", code="skdk", published=True, icon='fas fa-balance-scale'),
+        DocumentType(name="Судейский и дисциплинарный комитет", code="skdk", published=True,
+                     icon='fas fa-balance-scale'),
     ])
 
 
@@ -36,6 +37,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='document',
             name='type',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='documents', to='fiim.DocumentType'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='documents',
+                                    to='fiim.DocumentType'),
         ),
     ]

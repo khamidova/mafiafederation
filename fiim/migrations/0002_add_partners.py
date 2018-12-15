@@ -22,7 +22,13 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='document',
             name='type',
-            field=models.CharField(choices=[('fiim', 'Нормативные документы'), ('protocol', 'Протоколы собраний'), ('order', 'Приказы'), ('sk', 'Судейский комитет'), ('dk', 'Дисциплинарный комитет')], max_length=100),
+            field=models.CharField(choices=[
+                ('fiim', 'Нормативные документы'),
+                ('protocol', 'Протоколы собраний'),
+                ('order', 'Приказы'),
+                ('sk', 'Судейский комитет'),
+                ('dk', 'Дисциплинарный комитет')
+            ], max_length=100),
         ),
         migrations.AlterField(
             model_name='official',

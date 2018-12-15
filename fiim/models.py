@@ -16,13 +16,15 @@ class Official(models.Model):
     region = models.ForeignKey('fiim.Region', on_delete=models.PROTECT)
     city = models.CharField(max_length=100)
     description = RichTextField()
-    photo = models.ImageField(upload_to='images/officials', default = 'images/officials/official-no-img.jpg')
+    photo = models.ImageField(upload_to='images/officials', default='images/officials/official-no-img.jpg')
     started_at = models.DateField()
     document = models.ForeignKey(to="fiim.Document", on_delete=models.PROTECT, null=True, blank=True)
     published = models.BooleanField(default=False)
 
-    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
-                                 message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+    phone_regex = RegexValidator(
+        regex=r'^\+?1?\d{9,15}$',
+        message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."
+    )
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
     email = models.EmailField(blank=True)
     vkontakte = models.URLField(blank=True)
@@ -57,6 +59,7 @@ class Document(models.Model):
         else:
             return '<p>Текст документа доступен в PDF формате.</p>'
 
+
 class DocumentType(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=20, primary_key=True)
@@ -72,6 +75,7 @@ class DocumentType(models.Model):
             return self.documents.filter(published=True).order_by('-created_at')
         else:
             return self.documents.filter(published=True).order_by('created_at')
+
 
 class Partner(models.Model):
     name = models.CharField(max_length=100)
