@@ -10,6 +10,7 @@ from fiim.models import (
 
 class DocumentAdmin(admin.ModelAdmin):
     filter_horizontal = ('participant',)
+    list_filter = ('published', 'type')
 
 
 admin.site.register(Official)
