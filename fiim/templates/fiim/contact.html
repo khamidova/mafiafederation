@@ -61,50 +61,6 @@
                         </div> <!-- /.contact-information -->
                     </div> <!-- /.inner-content -->
                 </div> <!-- /.col-md-6 -->
-                <div class="col-md-6">
-                    <div class="widget-content">
-                        {% if messages %}
-                        <div id="messages">
-                            {% for message in messages %}
-                            <div class=row>
-                                <div class=col-md-12>
-                                    {% get_bootstrap_alert_msg_css_name message.tags as alert_tag %}
-                                    <div class="alert alert-{{alert_tag}} alert-dismissable">
-                                        <button type=button class=close data-dismiss=alert>&times;</button>
-                                        {{ message }}
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        {% endif %}
-                        <div class="page-title">Contact Us</div>
-                        <div class="contact-form">
-                            <form role="form" action="" method="post">
-                                {% csrf_token %}
-                                <fieldset>
-                                    <input id="id_name" type="text" name="name" placeholder="Имя" maxlength="40"
-                                           required>
-                                </fieldset>
-                                <fieldset>
-                                    <input type="email" name="email" id="id_email" placeholder="Email" maxlength="30"
-                                           required>
-                                </fieldset>
-                                <fieldset>
-                                    <input type="text" name="subject" id="id_subject" placeholder="Тема" maxlength="60"
-                                           required>
-                                </fieldset>
-                                <fieldset>
-                                    <textarea name="message" id="id_message" placeholder="Сообщение"
-                                              required></textarea>
-                                </fieldset>
-                                <fieldset>
-                                    <input type="submit" name="send" value="Отправить" id="submit" class="button">
-                                </fieldset>
-                            </form>
-                        </div> <!-- /.contact-form -->
-                    </div> <!-- /.inner-content -->
-                </div> <!-- /.col-md-6 -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /.contact -->
