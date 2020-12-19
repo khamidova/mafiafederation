@@ -27,4 +27,4 @@ urlpatterns = [
     path('documents', views.documents_list, name='documents'),
     path('partners', views.partners_list, name='partners'),
     path('contact', views.contact, name='contact'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
